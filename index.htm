@@ -1,0 +1,316 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><p><br></p>
+<title>
+CS294 Project 2 - Jing Yuan
+</title>
+
+<body style="background-color:#dddddd;"></body>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- common.css -->
+<style>* {-webkit-tap-highlight-color: rgba(0,0,0,0);}html {-webkit-text-size-adjust: none;}body {font-family: -apple-system, Helvetica, Arial, sans-serif;margin: 0;padding: 20px;color: #333;word-wrap: break-word;}h1, h2, h3, h4, h5, h6 {line-height: 1.1;}img {max-width: 100% !important;height: auto;}blockquote {margin: 0;padding: 0 15px;color: #777;border-left: 4px solid #ddd;}hr {background-color: #ddd;border: 0;height: 1px;margin: 15px 0;}code {font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, 'source-code-pro', monospace;line-height: 1.4;margin: 0;padding: 0.2em 0;font-size: 90%;background-color: rgba(0,0,0,0.04);border-radius: 3px;}pre > code {margin: 0;padding: 0;font-size: 100%;word-break: normal;background: transparent;border: 0;}ol {list-style-type: decimal;}ol ol, ul ol {list-style-type: lower-latin;}ol ol ol, ul ol ol, ul ul ol, ol ul ol {list-style-type: lower-roman;}table {border-spacing: 0;border-collapse: collapse;margin-top: 0;margin-bottom: 16px;}table th {font-weight: bold;}table th, table td {padding: 6px 13px;border: 1px solid #ddd;}table tr {border-top: 1px solid #ccc;}table tr:nth-child(even) {background-color: #f8f8f8;}input[type="checkbox"] {cursor: default;margin-right: 0.5em;font-size: 13px;}.task-list-item {list-style-type: none;}.task-list-item+.task-list-item {margin-top: 3px;}.task-list-item input {float: left;margin: 0.3em 1em 0.25em -1.6em;vertical-align: middle;}#tag-field {margin: 8px 2px 10px;}#tag-field .tag {display: inline-block;background: #cadff3;border-radius: 4px;padding: 1px 8px;color: black;font-size: 12px;margin-right: 10px;line-height: 1.4;}</style>
+<!-- ace-static.css -->
+<style>.ace_static_highlight {white-space: pre-wrap;}.ace_static_highlight .ace_gutter {width: 2em;text-align: right;padding: 0 3px 0 0;margin-right: 3px;}.ace_static_highlight.ace_show_gutter > .ace_line {padding-left: 2.6em;}.ace_static_highlight .ace_line {position: relative;}.ace_static_highlight .ace_gutter-cell {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;top: 0;bottom: 0;left: 0;position: absolute;}.ace_static_highlight .ace_gutter-cell:before {content: counter(ace_line, decimal);counter-increment: ace_line;}.ace_static_highlight {counter-reset: ace_line;}</style>
+<style>.ace-chrome .ace_gutter {background: #ebebeb;color: #333;overflow : hidden;}.ace-chrome .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-chrome {background-color: #FFFFFF;color: black;}.ace-chrome .ace_cursor {color: black;}.ace-chrome .ace_invisible {color: rgb(191, 191, 191);}.ace-chrome .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-chrome .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-chrome .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-chrome .ace_invalid {background-color: rgb(153, 0, 0);color: white;}.ace-chrome .ace_fold {}.ace-chrome .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-chrome .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-chrome .ace_support.ace_type,.ace-chrome .ace_support.ace_class.ace-chrome .ace_support.ace_other {color: rgb(109, 121, 222);}.ace-chrome .ace_variable.ace_parameter {font-style:italic;color:#FD971F;}.ace-chrome .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-chrome .ace_comment {color: #236e24;}.ace-chrome .ace_comment.ace_doc {color: #236e24;}.ace-chrome .ace_comment.ace_doc.ace_tag {color: #236e24;}.ace-chrome .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-chrome .ace_variable {color: rgb(49, 132, 149);}.ace-chrome .ace_xml-pe {color: rgb(104, 104, 91);}.ace-chrome .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-chrome .ace_heading {color: rgb(12, 7, 255);}.ace-chrome .ace_list {color:rgb(185, 6, 144);}.ace-chrome .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-chrome .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-chrome .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-chrome .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-chrome .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-chrome .ace_gutter-active-line {background-color : #dcdcdc;}.ace-chrome .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-chrome .ace_storage,.ace-chrome .ace_keyword,.ace-chrome .ace_meta.ace_tag {color: rgb(147, 15, 128);}.ace-chrome .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-chrome .ace_string {color: #1A1AA6;}.ace-chrome .ace_entity.ace_other.ace_attribute-name {color: #994409;}.ace-chrome .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}</style>
+<!-- export.css -->
+<style>
+    body{margin:0 auto;max-width:1200px;line-height:1.4}
+    #nav{margin:5px 0 10px;font-size:15px}
+    #titlearea{border-bottom:1px solid #ccc;font-size:17px;padding:10px 0;}
+    #contentarea{font-size:15px;margin:16px 0}
+    .cell{outline:0;min-height:20px;margin:5px 0;padding:5px 0;}
+    .code-cell{font-family:Menlo,Consolas,'Ubuntu Mono',Monaco,'source-code-pro',monospace;font-size:12px;}
+    .latex-cell{white-space:pre-wrap;}
+  </style>
+<!-- User CSS -->
+<style> .text-cell {font-size: 15px;}.code-cell {font-size: 12px;}.markdown-cell {font-size: 15px;}.latex-cell {font-size: 15px;}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script type="text/javascript" src=" MathJax.js"></script>
+
+<h1 style="text-align: center;" id="Project Title">CS194 - 26 Intro to Computer Vision and Computational Photography</h1>
+<h2 style="text-align: center;">Project 2 - Fun with Filters and Frequencies!</h2>
+<h4 style="text-align: center;"> By Jing Yuan [Email: jingyuan10@berkeley.edu]</h4>
+<br>
+<h2 id="Part 1"> Part 1: Fun with Filters</h2>
+<p>In this part, we will build intuitions about 2D convolutions and filtering.</p>
+<h4 id="Part1.1">Part 1.1: Finite Difference Operator</h2>
+<p> I first got the partial derivative in x of the image by convolving it with the filter [[1,-1]], the partial derivative in y of the image by convolving it with [[1],[-1]]. These images are pictured below. Then, I used the DX and DY images to get the gradient magnitude image by using the fformula: Magnitude = sqrt(DX^2 + DY^2). After computing the gradient image which is pictured below, I compute the largest pixel value inside gradient image, then I find the threshold for the edge image by using alpha * Max(pixel). After several expiremental, I found a threshold of Alpha is (0.12) such that all pixels above that threshold would be considered part of an edge and all below would not. The resulting edge image is shown below.</p>
+<br>
+
+<img width="250" src="out/Cameraman_x.png"> 
+<img width="250"src="out/Cameraman_y.png">
+<img width="250" src="out/Cameraman_magni.png">
+<img width="250"src="out/Cameraman_edge.png">
+<figcaption ><b>Figure from left to right are</b>: DX, &nbsp &nbsp  DY,  &nbsp &nbsp Gradient Magnitude Image,  &nbsp &nbspGradient Edge Image</figcaption>
+<br>
+<br>
+<br>
+<h4 id="Part 1.2">Part 1.2: Derivative of Gaussian (DoG) Filter</h4>
+<p>In this problem, I used a 2D guassian filter(5 * 5, sigma=1) to smooth the image and then get the edge image. After smoothing the image, I ran the same process as part 1.1 to produce an edge image with a threshold of .08, shown in the following images. </p>
+<p>Instead of running the guassian filter and then the derivative filters on the image seperately, I convolve the 2D guassian with the derivative filters (DX,DY) first and then convoling on the image with the derivative of gaussian, shown in the following images.This ended up, as expected, producing the same result, due to the algorithm of convolutions, that </p>
+<p>The main differences are that there is less noise in the edge image with the smoothing pre-processing. And also the edges of the smoothed image are thicker, because the gaussian filter blur the image and make the image less sharp.</p>
+<br>
+<img width="250" src="out/Cameraman_blur1.png">
+<img width="250"src="out/Cameraman_blur1.png">
+<figcaption ><b>Figure from left to right are</b>: 2-Convolutions result, &nbsp &nbsp 1-Convolution result</figcaption>
+<br>
+<br>
+<br>
+<h4 id="Part 1.3">Part 1.3: Image Straightening</h4>
+<p>In this part of the project, we are aimming to rotate the image by the proposed rotation</p>
+<p>Image Straightening Steps:<br>
+  1. Crop 60% of the original image from the center of the image;<br>
+  2. Compute the gradient angle of the edges in the image, by firstly getting the derivative in the x and y directions and compute the angle of the edge using the following formula: angle = arctan(dy/dx);<br>
+  3. Compute a histogram of these angles;<br>
+  4. Inspect the histigram, and choose the angle range between H=abs(80-90) and V=abs(0-10). Then, I computed the mean of 90-H and V and use the average of these two numbers as the rotation angle. (With the assumption that the rotation angle of the original image is less than 10);<br>
+  </p>
+
+<br>
+<figcaption ><b>Successful cases</b>: from left to right: original image, rotated image.</figcaption>
+<br>
+<img width="250" src="facade.jpg">
+<img width="250"src="out/facade_blur2.jpg">
+<img width="250" src="facade1.jpg">
+<img width="250"src="out/facade1_blur2.jpg">
+<br>
+<img width="250" src="out/facade_b.png">
+<img width="250"src="out/facade_a.png">
+<img width="250" src="out/facade1_b.png">
+<img width="250"src="out/facade1_a.png">
+<br>
+<br>
+<br>
+<img width="250" src="facade2.jpg">
+<img width="250"src= "out/facade2_blur2.jpg">
+<img width="250" src="facade3.jpg">
+<img width="250"src="out/facade3_blur2.jpg">
+<br>
+<img width="250" src="out/facade2_b.png">
+<img width="250"src="out/facade2_a.png">
+<img width="250" src="out/facade3_b.png">
+<img width="250"src="out/facade3_a.png">
+<br>
+<br>
+<br>
+<p><b>Possible failure:</b><br>
+   1) the rotation angle of the original image  is larger than 10; <br>
+   2) there are little lines in the figure, so that my algorithm may not detect the horizontal or vertical line. </p>
+   <br>
+<figcaption ><b>Failure cases</b>: from left to right: original image, rotated image.</figcaption>
+<br>
+<img width="250" src="facade5.jpeg">
+<img width="250"src="out/facade5_blur2.jpg">
+<br>
+<img width="250" src="out/facade5_b.png">
+<img width="250"src="out/facade5_a.png">
+<br>
+<br>
+<br>
+<h2 id="Part 2">Part 2: Fun with Frequencies!</h2>
+<h4 id="Part2.1">Part 2.1: Image "Sharpening"</h2>
+  <p>In this part of the project, I used guassian filters to sharpen images. This was done by filtering the image with a guassian as a low pass filter and subtracting the result from the original image to isolate the high frequencies in the image. The high frequencies were multiplied by an alpha value and added back to the original image to create the sharpened image. Thus the calculation eqaution is [enhanced image = original + alpha * (original - blurred)]. The following images were sharpened using a guassian of size (5 * 5) with sigma 1 and an alpha value of 0.5</p>
+<br>
+<figcaption ><b>Failure cases</b>: from left to right: original image,&nbsp &nbsp sharpened image.</figcaption>
+<img width="250" src="taj.jpg">
+<img width="250"src="out/taj_sharp.jpg">
+
+<br>
+<br>
+<br>
+
+<br>
+<img width="250" src="tiger.jpg">
+<img width="250"src="out/tiger_sharp.jpg">
+
+<br>
+<br>
+<br>
+<p><b>Blur then Sharpen</b></p>
+<p>In the following case, I first blur the imgae using a guassian of size (5 * 5) with sigma 1 . And then use the same sharpen method to sharp the blurred image. Compared to the original image, the result is even blurry, becase during the first blurring step, we lost the image information from high frequencies. So, in the sharp process, even we get the high frequency information of the blurred image, we can not be as clear as the original one. </p>
+<br>
+<img width="250" src="liuyifei.jpg">
+<img width="250"src="out/liuyifei_blur2.jpg">
+<img width="250"src="out/liuyifei_sharp.jpg">
+
+<br>
+<br>
+<br>
+<h4 id="Part 2.2">Part 2.2: Hybrid Images</h4>
+  <p>The goal of this part of the assignment is to create hybrid images using the approach described in the SIGGRAPH 2006 paper by Oliva, Torralba, and Schyns. Hybrid images are static images that change in interpretation as a function of the viewing distance. The basic idea is that high frequency tends to dominate perception when it is available, but, at a distance, only the low frequency (smooth) part of the signal can be seen. By blending the high frequency portion of one image with the low-frequency portion of another, you get a hybrid image that leads to different interpretations at different distances.</p>
+  <p>Hybrid Images Steps:<br>
+    1. First, I aligned two images by using the "Python" version of alignment tool (image1_lf); <br>
+    2. Then, I used a low-pass filter to blur one image (a guassian of size (30 * 30) with sigma 15 );<br>
+    3. Then, I used a high-pass filter to filter out the high frequency information from the other image (a guassian of size (20 * 20) with sigma 15 ) (image2_hf);<br>
+    4. Finally, I combined two filtered imaged by using the equation: hybrid=sigma1 * image1_lf + sigma2*image2_hf .<br></p>
+    <p>For the cat and Derek hybrid, sigma1=0.3, sigma2=0.2;<br>
+      For the smell and sad hybrid, sigma1=0.1, sigma2=0.8;
+    </p>
+    
+    <br>
+    <br>
+    <figcaption ><b>Derek and Cat</b>: from top to bottom: images and log magnitude of the Fourier transform of the two input images, the filtered images.</figcaption>
+<img width="250" src="DerekPicture.jpg">
+<img width="250"src="nutmeg.jpg">
+<img width="150"src="arrow.png">
+<img width="250" src="out/hybrid.jpg">
+<br>
+<br>
+<br>
+<img width="250" src="out/hybrid_1.png">
+<img width="250"src="out/hybrid_2.png">
+<img width="150"src="arrow.png">
+<img width="250" src="out/hybrid_3.png">
+<br>
+<br>
+<br>
+<figcaption ><b>Smile and sad</b>: from top to bottom: images and log magnitude of the Fourier transform of the two input images, the filtered images.</figcaption>
+<img width="250" src="sad.jpg">
+<img width="250"src="smile.jpg">
+<img width="150"src="arrow.png">
+<img width="300" src="out/hybrid1.jpg">
+<br>
+<br>
+<br>
+<h4 id="Part 2.3">Part 2.3: Gaussian and Laplacian Stacks</h4>
+  <p>In this part you will implement Gaussian and Laplacian stacks, which are kind of like pyramids but without the downsampling. Then you will use these to analyze some images, and your results from part 1.2.</p>
+  <p>Gaussian and Laplacian Stacks<br>
+    1. First,  I used blured images five times to get Gaussian stacks;<br>
+    2. Then, after each blur, I substract the later image with the previous image to get the Laplacian stacks;<br></p>
+   
+<br>
+<figcaption ><b>lincoln</b>: from top to bottom: Gaussian and Laplacian Stacks.</figcaption>
+<img width="150" src="lincoln.jpg">
+<br>
+<img width="150"src="out/lincoln_gaussian1.jpg">
+<img width="150"src="out/lincoln_gaussian2.jpg">
+<img width="150" src="out/lincoln_gaussian3.jpg">
+<img width="150"src="out/lincoln_gaussian4.jpg">
+<img width="150"src="out/lincoln_gaussian5.jpg">
+<img width="150"src="out/lincoln_gaussian6.jpg">
+
+<br>
+<img width="150"src="out/lincoln_Laplacian1.jpg">
+<img width="150"src="out/lincoln_Laplacian2.jpg">
+<img width="150" src="out/lincoln_Laplacian3.jpg">
+<img width="150"src="out/lincoln_Laplacian4.jpg">
+<img width="150"src="out/lincoln_Laplacian5.jpg">
+<img width="150"src="out/lincoln_Laplacian6.jpg">
+<br>
+<br>
+<br>
+<br>
+<figcaption ><b>monalisa</b>: from top to bottom: Gaussian and Laplacian Stacks.</figcaption>
+<img width="150" src="monalisa.jpg">
+<br>
+<img width="150"src="out/monalisa_gaussian1.jpg">
+<img width="150"src="out/monalisa_gaussian2.jpg">
+<img width="150" src="out/monalisa_gaussian3.jpg">
+<img width="150"src="out/monalisa_gaussian4.jpg">
+<img width="150"src="out/monalisa_gaussian5.jpg">
+<img width="150"src="out/monalisa_gaussian6.jpg">
+<br>
+<img width="150"src="out/monalisa_Laplacian1.jpg">
+<img width="150"src="out/monalisa_Laplacian2.jpg">
+<img width="150" src="out/monalisa_Laplacian3.jpg">
+<img width="150"src="out/monalisa_Laplacian4.jpg">
+<img width="150"src="out/monalisa_Laplacian5.jpg">
+<img width="150"src="out/monalisa_Laplacian6.jpg">
+<br>
+<br>
+<br>
+<figcaption ><b>Applying your Gaussian and Laplacian stacks to Derek and cat</b>: from top to bottom: Gaussian and Laplacian Stacks.</figcaption>
+<img width="150" src="out/hybrid.jpg">
+<br>
+<img width="150"src="out/hybrid_G1.jpg">
+<img width="150"src="out/hybrid_G2.jpg">
+<img width="150" src="out/hybrid_G3.jpg">
+<img width="150"src="out/hybrid_G4.jpg">
+<img width="150" src="out/hybrid_G5.jpg">
+<img width="150"src="out/hybrid_G6.jpg">
+<br>
+<img width="150"src="out/hybrid_L1.jpg">
+<img width="150"src="out/hybrid_L2.jpg">
+<img width="150" src="out/hybrid_L3.jpg">
+<img width="150"src="out/hybrid_L4.jpg">
+<img width="150"src="out/hybrid_L5.jpg">
+<img width="150"src="out/hybrid_L6.jpg">
+<br>
+<br>
+
+<h4 id="Part 2.4">Part 2.4: Multiresolution Blending (a.k.a. the oraple!)</h4>
+  <p>The goal of this part of the assignment is to blend two images seamlessly using a multi resolution blending as described in the 1983 paper by Burt and Adelson. An image spline is a smooth seam joining two image together by gently distorting them. Multiresolution blending computes a gentle seam between the two images seperately at each band of image frequencies, resulting in a much smoother seam.
+  <p>Multiresolution Blending<br>
+      1. Build Laplacian pyramids LA and LB for images A and B respectively.;<br>
+      2. Build Laplacian pyramids LA and LB for images A and B respectively.;<br>
+      3.Form a combined pyramid LS from LA and LB using nodes of GM as weights. That is, for each level: LS(level) = LA(level)GM(level) + LB(level)*(1-GM(level))</p>
+  </p>
+  <br>
+  <img width="250" src="apple.jpg">
+  <img width="250"src="orange.jpg">
+  <img width="250"src="mask.jpg">
+  <img width="50"src="arrow.png">
+  <img width="250" src="out/apple_orange.jpg">
+  <br>
+  <br>
+  <br>
+  <img width="250" src="mars.jpeg">
+  <img width="250"src="earth.jpeg">
+  <img width="250"src="mask.jpg">
+  <img width="50"src="arrow.png">
+  <img width="250" src="out/mars_earth.jpg">
+  <br>
+  <br>
+  <br>
+  <img width="250" src="bulb_origin.jpeg">
+  <img width="250"src="man.jpg">
+  <img width="250"src="mask_bulb.jpg">
+  <img width="50"src="arrow.png">
+  <img width="250" src="out/man_bulb.jpg">
+  <br>
+  <br>
+  <br>
+  <img width="250" src="girl.jpg">
+  <img width="250"src="beach.jpg">
+  <img width="250"src="mask_girl.jpg">
+  <img width="50"src="arrow.png">
+  <img width="250" src="out/girl_beach.jpg">
+  <br>
+  <br>
+  <br>
+  <p>Illustrate the process by applying Laplacian stack [for the Kids and beach image]</p>
+  <img width="250" src="out/girl_beach_R0.jpg">
+  <img width="250"src="out/girl_beach_L0.jpg">
+  <img width="250"src="out/girl_beach_F0.jpg">
+  <br>
+  <br>
+  <br>
+  <img width="250" src="out/girl_beach_R1.jpg">
+  <img width="250"src="out/girl_beach_L1.jpg">
+  <img width="250"src="out/girl_beach_F1.jpg">
+  <br>
+  <br>
+  <br>
+  <img width="250" src="out/girl_beach_R2.jpg">
+  <img width="250"src="out/girl_beach_L2.jpg">
+  <img width="250"src="out/girl_beach_F2.jpg">
+  <br>
+  <br>
+  <br>
+  <img width="250" src="out/girl_beach_R3.jpg">
+  <img width="250"src="out/girl_beach_L3.jpg">
+  <img width="250"src="out/girl_beach_F3.jpg">
+  <br>
+  <br>
+  <br>
+  <img width="250" src="out/girl_beach_R4.jpg">
+  <img width="250"src="out/girl_beach_L4.jpg">
+  <img width="250"src="out/girl_beach_F4.jpg">
+  <br>
+  <br>
+  <br>
+  <img width="250"src="out/girl_beach_mono.jpg">
+  <br>
+  <br>
+  <br>
+  <h2 id="learning">Learning</h2>
+  <p>I love this project! During the class, I find sometime it could be difficult to understand, but after playing with those filters for a while, I totally get it. I am the one who is the fan of Photography, this project really help me understand how some function inside the Photoshop work.</p>
+</body></html>
